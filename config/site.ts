@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   name: "AI Tutor Agents",
   description:
     "Crafting Chatbots with OpenAI's Assistant.",
-  url: "https://open-assistant-gpt.vercel.app",
+  url: "https://open-assistant-gpt.vercel.app/",
   ogImage: "https://www.openassistantgpt.io/dashboard.png",
   links: {
     twitter: "https://twitter.com/tsi_org",
