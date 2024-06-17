@@ -19,7 +19,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
                     <MainNav items={docsConfig.mainNav}>
                         <DocsSidebarNav items={docsConfig.sidebarNav} />
                     </MainNav>
-                    <div className="flex flex-1 items-center space-x-4 sm:justify-end">
+                    {/* <div className="flex flex-1 items-center space-x-4 sm:justify-end">
                         <nav className="flex space-x-4">
                             <Link
                                 href={siteConfig.links.github}
@@ -30,7 +30,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
                                 <span className="sr-only">GitHub</span>
                             </Link>
                         </nav>
-                    </div>
+                    </div> */}
                 </div>
             </header>
             <div className="container flex-1">{children}</div>
