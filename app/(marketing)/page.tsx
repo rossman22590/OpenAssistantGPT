@@ -25,21 +25,21 @@ export default function IndexPage() {
             Build your own chatbot with OpenAI Assistant
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            An open source platform for building chatbot with the Assistant API. We offer seamless integration for effortlessly incorporating a chatbot into your website.
+            A platform for building chatbot with the Assistant API. We offer seamless integration for effortlessly incorporating a chatbot into your website.
           </p>
           <div className="space-x-4 space-y-4">
             <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
               <Icons.bot className="h-4 w-4 mr-2"></Icons.bot>
               Get Started for Free
             </Link>
-            <Link
+            {/* <Link
               href={siteConfig.links.github}
               target="_blank"
               rel="noreferrer"
               className={cn(buttonVariants({ variant: "outline", size: "lg" }), 'bg-white')}
             >
               <Icons.gitHub className="h-4 w-4 mr-2"></Icons.gitHub> GitHub
-            </Link>
+            </Link> */}
           </div>
           <Image data-aos="zoom-in" priority={false} className="mt-10 border shadow-lg" src="/dashboard.png" width={810} height={540} alt="Dashboard" />
         </div>
@@ -212,7 +212,7 @@ export default function IndexPage() {
         </div>
       </section>
       <section data-aos="fade-up" id="open-source" className="container py-12 md:py-24 lg:py-32">
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
+        {/* <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
             Proudly Open Source
           </h2>
@@ -223,7 +223,7 @@ export default function IndexPage() {
         </div>
         <div className="mt-10 mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-left">
           <GithubCard />
-        </div>
+        </div> */}
       </section>
       <section data-aos="fade-up" id="pricing" className="container py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
