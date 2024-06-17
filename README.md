@@ -1,7 +1,7 @@
 # Welcome to OpenAssistantGPT
 
 <p>
-<img alt="Vercel Build Status" src="https://vercelbadge.vercel.app/api/marcolivierbouch/OpenAssistantGPT" />
+<img alt="Vercel Build Status" src="https://vercelbadge.vercel.app/api/marcolivierbouch/OpenAssistantGPT" /> 
 <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/marcolivierbouch/OpenAssistantGPT" />
 <img alt="" src="https://img.shields.io/github/repo-size/marcolivierbouch/OpenAssistantGPT" />
 <img alt="GitHub Issues" src="https://img.shields.io/github/issues/marcolivierbouch/OpenAssistantGPT" />
