@@ -18,7 +18,7 @@ export function SiteFooter({ simpleFooter, className }: SiteFooterProps) {
               <h3 className="text-lg font-semibold text-gray-700">Explore</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link className="text-base text-gray-500 hover:text-blue-500" href="https://openassistantgpt.io/docs">
+                  <Link className="text-base text-gray-500 hover:text-blue-500" href="/docs">
                     Documentation
                   </Link>
                 </li>
@@ -47,7 +47,7 @@ export function SiteFooter({ simpleFooter, className }: SiteFooterProps) {
           </div>
         }
         <div className="flex justify-between items-center border-t border-gray-200 mt-8 pt-4">
-          <div className="text-sm text-gray-500 flex flex-row"> <Icons.bot className="mr-2" /> © 2023 {siteConfig.name}. All rights reserved.</div>
+          <div className="text-sm text-gray-500 flex flex-row"> <Icons.bot className="mr-2" /> © 2024 {siteConfig.name}. All rights reserved.</div>
           <div className="flex items-center space-x-4">
             <Link className="text-sm text-gray-500 hover:text-blue-500" href="#">
             </Link>
