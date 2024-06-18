@@ -41,7 +41,7 @@ export default function IndexPage() {
               <Icons.gitHub className="h-4 w-4 mr-2"></Icons.gitHub> GitHub
             </Link> */}
           </div>
-          <Image data-aos="zoom-in" priority={false} className="mt-10 border shadow-lg" src="https://img.mytsi.org/i/PcNe636.png" width={810} height={540} alt="Dashboard" />
+          <Image data-aos="zoom-in" priority={false} className="mt-10 border shadow-lg" src="/ait.png" width={810} height={540} alt="Dashboard" />
         </div>
       </section>
       <section data-aos="fade-up" id="chat" className="container py-12 md:py-24 lg:py-32">
