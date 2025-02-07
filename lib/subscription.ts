@@ -24,19 +24,76 @@ export async function getUserSubscriptionPlan(
         throw new Error("User not found")
     }
 
-    // Skip all plan checks and always return pro plan
+    // Return pro plan without any Stripe checks
     return {
         ...proPlan,
         ...user,
-        // Ensure subscription never expires
-        stripeCurrentPeriodEnd: user.stripeCurrentPeriodEnd?.getTime() || Date.now() + (10 * 365 * 24 * 60 * 60 * 1000),
-        // Force pro status
+        stripeCurrentPeriodEnd: Date.now() + (10 * 365 * 24 * 60 * 60 * 1000),
+        // Use actual proPlan values
         stripePriceId: proPlan.stripePriceId,
-        stripeSubscriptionId: user.stripeSubscriptionId || "sub_pro",
-        stripeCustomerId: user.stripeCustomerId || "cus_pro",
+        // Don't set stripeSubscriptionId to avoid Stripe checks
+        stripeSubscriptionId: null,
+        stripeCustomerId: null,
         name: proPlan.name,
         isPro: true,
         isSubscribed: true,
         isCanceled: false
     }
 }
+
+
+// // @ts-nocheck
+// // TODO: Fix this when we turn strict mode on.
+// import { UserSubscriptionPlan } from "@/types"
+// import { basicPlan, freePlan, hobbyPlan, legacyBasicPlan, proPlan } from "@/config/subscriptions"
+// import { db } from "@/lib/db"
+// import { stripe } from "@/lib/stripe"
+
+// export async function getUserSubscriptionPlan(
+//     userId: string
+// ): Promise<UserSubscriptionPlan> {
+//     const user = await db.user.findFirst({
+//         where: {
+//             id: userId,
+//         },
+//         select: {
+//             stripeSubscriptionId: true,
+//             stripeCurrentPeriodEnd: true,
+//             stripeCustomerId: true,
+//             stripePriceId: true,
+//         },
+//     })
+
+//     if (!user) {
+//         throw new Error("User not found")
+//     }
+
+//     const hasPlan = user.stripePriceId &&
+//         user.stripeCurrentPeriodEnd?.getTime() + 86_400_000 > Date.now()
+
+//     let plan = freePlan
+//     if (hasPlan) {
+//         const subscription = await stripe.subscriptions.retrieve(user.stripeSubscriptionId)
+
+//         if (subscription.plan.nickname === "Pro plan") {
+//             plan = proPlan
+//         } else if (subscription.plan.nickname === "Hobby plan") {
+//             plan = hobbyPlan
+//         } else if (subscription.plan.nickname === "Basic plan") {
+//             // if subscription is created before 2024-05-01, it's a legacy plan
+//             console.log(subscription.created)
+//             if (subscription.created < 1717200000) {
+//                 plan = legacyBasicPlan
+//             } else {
+//                 plan = basicPlan
+//             }
+
+//         }
+//     }
+
+//     return {
+//         ...plan,
+//         ...user,
+//         stripeCurrentPeriodEnd: user.stripeCurrentPeriodEnd?.getTime(),
+//     }
+// }
