@@ -39,7 +39,7 @@ export default function WelcomeEmail({ name }: WelcomeEmailProps) {
                             need assistance, feel free to reach out.
                         </Text>
                         <Text>
-                            You can contact us directly with the email openassistantgpt@gmail.com
+                            You can contact us directly with the email rcohen@mytsi.org.
                         </Text>
                         <Section className="text-center mt-[32px] mb-[32px]">
                             <Button
