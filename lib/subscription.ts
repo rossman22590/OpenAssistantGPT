@@ -1,7 +1,7 @@
 // @ts-nocheck
 // TODO: Fix this when we turn strict mode on.
 import { UserSubscriptionPlan } from "@/types"
-import { proPlan } from "@/config/subscriptions"
+import { basicPlan, freePlan, hobbyPlan, legacyBasicPlan, proPlan } from "@/config/subscriptions"
 import { db } from "@/lib/db"
 import { stripe } from "@/lib/stripe"
 
@@ -24,34 +24,22 @@ export async function getUserSubscriptionPlan(
         throw new Error("User not found")
     }
 
-    // Create a Pro plan object with specific settings
-    const enhancedProPlan = {
-        ...proPlan,
-        name: "Pro plan",
-        description: "Pro plan with unlimited access",
-        stripePriceId: "price_pro", // You can set this to match your Stripe price ID
-        price: 0, // Set to 0 or any value you want to show
-        features: [
-            "Unlimited API requests",
-            "Priority support",
-            "Custom domains",
-            "Advanced analytics",
-            "Team collaboration",
-            "All premium features"
-        ],
-    }
+    // Always set plan to proPlan
+    const plan = proPlan
 
-    // Return enhanced Pro plan with user data
+    // Merge the user data with pro plan, ensuring subscription appears active
     return {
-        ...enhancedProPlan,
+        ...plan,
         ...user,
-        // Set subscription end date far in the future (10 years)
+        // Set a far future date for subscription end
         stripeCurrentPeriodEnd: Date.now() + (10 * 365 * 24 * 60 * 60 * 1000),
-        // Force the subscription to appear active
-        isSubscribed: true,
-        isCanceled: false,
-        isActive: true,
-        isPro: true
+        // Ensure stripe fields are set even if user doesn't have them
+        stripeSubscriptionId: user.stripeSubscriptionId || "sub_pro",
+        stripePriceId: user.stripePriceId || proPlan.stripePriceId,
+        stripeCustomerId: user.stripeCustomerId || "cus_pro",
+        // Force pro status
+        isPro: true,
+        isSubscribed: true
     }
 }
 
