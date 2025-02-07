@@ -5,6 +5,7 @@ import GoogleProvider from "next-auth/providers/google";
 
 import { db } from "@/lib/db"
 import { sendWelcomeEmail } from "./emails/send-welcome";
+import { proPlan } from "@/config/subscriptions"
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(db as any),
@@ -34,12 +35,6 @@ export const authOptions: NextAuthOptions = {
         session!.user!.name = token.name
         session!.user!.email = token.email
         session!.user!.image = token.picture
-        // Add Pro status
-        session!.user!.isPro = true
-        session!.user!.stripeSubscriptionId = "sub_pro"
-        session!.user!.stripePriceId = "price_pro"
-        session!.user!.stripeCustomerId = "cus_pro"
-        session!.user!.stripeCurrentPeriodEnd = new Date(2999, 12, 31)
       }
 
       return session
@@ -63,12 +58,22 @@ export const authOptions: NextAuthOptions = {
         name: dbUser.name,
         email: dbUser.email,
         picture: dbUser.image,
-        isPro: true
       }
     },
   },
   events: {
     async createUser(message) {
+      // Set pro subscription for new user
+      await db.user.update({
+        where: { id: message.user.id },
+        data: {
+          stripePriceId: proPlan.stripePriceId,
+          stripeSubscriptionId: "sub_" + message.user.id,
+          stripeCustomerId: "cus_" + message.user.id,
+          stripeCurrentPeriodEnd: new Date(2999, 12, 31),
+        },
+      });
+
       const params = {
         name: message.user.name,
         email: message.user.email,
@@ -77,23 +82,6 @@ export const authOptions: NextAuthOptions = {
     }
   },
 };
-
-// Add types for the enhanced session
-declare module "next-auth" {
-  interface Session {
-    user: {
-      id: string
-      name: string | null
-      email: string | null
-      image: string | null
-      isPro: boolean
-      stripeSubscriptionId: string
-      stripePriceId: string
-      stripeCustomerId: string
-      stripeCurrentPeriodEnd: Date
-    }
-  }
-}
 
 // import { type NextAuthOptions } from "next-auth";
 // import { PrismaAdapter } from "@next-auth/prisma-adapter"
