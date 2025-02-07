@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export function constructMetadata({
-    title = `OpenAssistantGPT - Build your own chatbot with OpenAI Assistant`,
-    description = `OpenAssistantGPT is the open-source platform for building chatbot using the OpenAI Assistant API. We offer seamless integration for effortlessly incorporating a chatbot into your website.`,
+    title = ` Build your own chatbot with OpenAI Assistant`,
+    description = `AI Tutor Agents is a platform for building chatbot using the OpenAI Assistant API. We offer seamless integration for effortlessly incorporating a chatbot into your website.`,
     image = "https://openassistantgpt.io/thumbnail.png",
     icons = [
         {
@@ -52,10 +52,10 @@ export function constructMetadata({
                 card: "summary_large_image",
                 images: [image],
             }),
-            creator: "@oassistantgpt",
+            creator: "@myaitutor",
         },
         icons,
-        metadataBase: new URL('https://openassistantgpt.io'),
+        metadataBase: new URL('https://myapps.ai'),
         ...(noIndex && {
             robots: {
                 index: false,

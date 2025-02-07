@@ -56,7 +56,7 @@ export default function IndexPage() {
           </p>
           <div className="min-w-[85%] min-h-[15rem] text-left items-left pt-6">
             <iframe
-              src="/embed/clq6m06gc000114hm42s838g2/window?chatbox=false&defaultMessage=How%20many%20chatbot%20can%20I%20create%20for%20free?"
+              src="/embed/cm6v1hxda0001jcc6kw558sla/window?chatbox=false&defaultMessage=How%20many%20chatbot%20can%20I%20create%20for%20free?"
               className="overflow-hidden border border-1 rounded-lg shadow-lg w-full h-[65vh]"
               allowFullScreen allow="clipboard-read; clipboard-write"
             ></iframe>
@@ -213,7 +213,7 @@ export default function IndexPage() {
           <Image alt="code example" className="mt-6 shadow-xl border rounded-lg" width={550} height={550} src="/code_example.png" />
         </div>
       </section>
-      <section data-aos="fade-up" id="open-source" className="container py-12 md:py-24 lg:py-32">
+      {/* <section data-aos="fade-up" id="open-source" className="container py-12 md:py-24 lg:py-32">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
             Proudly Open Source
@@ -226,7 +226,7 @@ export default function IndexPage() {
         <div className="mt-10 mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-left">
           <GithubCard />
         </div>
-      </section>
+      </section> */}
       <section data-aos="fade-up" id="pricing" className="container py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
@@ -293,7 +293,7 @@ export default function IndexPage() {
                   <li>✓ Customizations</li>
                   <li>✓ Unlimited Messages</li>
                   <li>✓ Client Inquiry / Collect Leads</li>
-                  <li>✓ Remove &apos;Powered by OpenAssistantGPT&apos;</li>
+                  <li>✓ Remove &apos;Powered by AI Tutor Agents&apos;</li>
                   <li>✓ Client File Attachment</li>
                 </ul>
               </CardContent>
@@ -308,9 +308,9 @@ export default function IndexPage() {
                   Custom plan for bigger enterprise. Contact the team for more information.
                 </p>
                 <ul className="space-y-1">
-                  <li>✓ X Chatbots</li>
-                  <li>✓ X Crawlers</li>
-                  <li>✓ X Files</li>
+                  <li>✓ Unlimited Chatbots</li>
+                  <li>✓ Unlimited Crawlers</li>
+                  <li>✓ Unlimited Files</li>
                   <li>✓ All Features from other plans.</li>
                 </ul>
               </CardContent>

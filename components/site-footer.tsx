@@ -30,9 +30,9 @@ export function SiteFooter({ simpleFooter, className }: SiteFooterProps) {
               </ul>
             </div>
             <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-gray-700">Social</h3>
+              {/* <h3 className="text-lg font-semibold text-gray-700">Social</h3> */}
               <ul className="space-y-2">
-                <li>
+                {/* <li>
                   <Link target="_blank" className="text-base text-gray-500 hover:text-blue-500" href={siteConfig.links.github}>
                     Github
                   </Link>
@@ -41,13 +41,13 @@ export function SiteFooter({ simpleFooter, className }: SiteFooterProps) {
                   <Link target="_blank" className="text-base text-gray-500 hover:text-blue-500" href={siteConfig.links.productHunt}>
                     ProductHunt
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
         }
         <div className="flex justify-between items-center border-t border-gray-200 mt-8 pt-4">
-          <div className="text-sm text-gray-500 flex flex-row"> <Icons.bot className="mr-2" /> © 2023 OpenAssistantGPT. All rights reserved.</div>
+          <div className="text-sm text-gray-500 flex flex-row"> <Icons.bot className="mr-2" /> © 2025 AI Tutor Agents. All rights reserved.</div>
           <div className="flex items-center space-x-4">
             <Link className="text-sm text-gray-500 hover:text-blue-500" href="#">
             </Link>

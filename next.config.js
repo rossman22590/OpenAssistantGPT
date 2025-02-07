@@ -4,7 +4,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['gwetfkan2dovfoiz.public.blob.vercel-storage.com'],
+    domains: ['8f7ppzkp0jcnrbwu.public.blob.vercel-storage.com'],
   },
   swcMinify: true,
   async headers() {
