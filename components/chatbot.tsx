@@ -84,13 +84,13 @@ export default function Chatbot() {
             return (
                 <>
                      <iframe
-                        src={`https://open-assistant-gpt.vercel.app/embed/clxjcpo460001kou8aw2kza9h/button?chatbox=false`}
+                        src={`https://open-assistant-gpt.vercel.app/embed/cm6v1hxda0001jcc6kw558sla/button?chatbox=false`}
                         scrolling='no'
                         id="openassistantgpt-chatbot-button-iframe"
                         className="fixed bottom-0 right-0 mb-4 z-50 flex items-end inline-block mr-4 w-14 h-14 border border-gray-300 rounded-full shadow-md"
                     ></iframe>
                     <iframe
-                        src={`https://open-assistant-gpt.vercel.app/embed/clxjcpo460001kou8aw2kza9h/window?chatbox=false&withExitX=true`}
+                        src={`https://open-assistant-gpt.vercel.app/embed/cm6v1hxda0001jcc6kw558sla/window?chatbox=false&withExitX=true`}
                         style={customStyle}
                         allowFullScreen
                         className='z-50'

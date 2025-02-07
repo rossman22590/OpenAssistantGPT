@@ -54,7 +54,7 @@ export default function IndexPage() {
           </p>
           <div className="min-w-[85%] min-h-[15rem] text-left items-left pt-6">
             <iframe
-              src="/embed/clxjcpo460001kou8aw2kza9h/window?chatbox=false"
+              src="https://open-assistant-gpt.vercel.app/embed/cm6v1hxda0001jcc6kw558sla/window?chatbox=false"
               className="overflow-hidden border border-1 rounded-lg shadow-lg w-full h-[65vh]"
               allowFullScreen allow="clipboard-read; clipboard-write"
             ></iframe>
