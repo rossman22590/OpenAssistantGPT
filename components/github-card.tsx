@@ -26,7 +26,7 @@ import { siteConfig } from "@/config/site"
 async function getGitHubStars(): Promise<string | null> {
     try {
         const response = await fetch(
-            "https://api.github.com/repos/marcolivierbouch/OpenAssistantGPT",
+            "#",
             {
                 headers: {
                     Accept: "application/vnd.github+json",

@@ -52,7 +52,7 @@ export default function IndexPage() {
             Test our chatbot assistant
           </h2>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            Ask any question about OpenAssistantGPT to our chatbot powered by OpenAI Assistant API and see how it responds. You can also try the chatbot buttom right of the window.
+            Ask any question about AI Tutor Agents to our chatbot powered by OpenAI Assistant API and see how it responds. You can also try the chatbot buttom right of the window.
           </p>
           <div className="min-w-[85%] min-h-[15rem] text-left items-left pt-6">
             <iframe
